@@ -34,3 +34,5 @@
 
 # Compile RUN output folder
 **/output/
+**/*.cf
+**/*.vcd

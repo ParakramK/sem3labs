@@ -2,34 +2,45 @@
 #include<math.h>
 #include<graphics.h>
 #include<conio.h>
-int main(){
-	int x1,y1,x2,y2,i;
-	float xk,yk,pk,dx,dy;
-	int gd=DETECT,gm;
-	initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
-	printf("enter left end point: \n");
-	scanf("%d%d",&x1,&y1);
-	printf("enter right end point: \n");
-	scanf("%d%d",&x2,&y2);
+#include<dos.h>
+
+void lineBre(int x1,int y1,int x2,int y2){
+	int x,y,p,dx,dy;
 	putpixel(x1,y1,WHITE);
 	dx=x2-x1;
 	dy=y2-y1;
-	pk=2*dy-dx;
-	xk=x1;
-	yk=y1;
-	for(i=0;i<=(dx-1);i++)	{
-		delay(100);	
-		if(pk<0)	{ 
-			xk=xk+1;
-			yk=yk;
-			pk=pk+2*dy;
-		}	else	{
-			xk=xk+1;
-			yk=yk+1;
-			pk=pk+2*dy-2*dx;
+	p=2*dy-dx;
+	x=x1;
+	y=y1;
+	while(x<x2)	{
+		delay(100);
+		if(p>=0)	{
+			putpixel(x,y,WHITE);
+			y=y+1;
+			p = p + 2 * dy -2*dx;
+		} else {
+			putpixel(x,y,WHITE);
+			p=p+2*dy;
 		}
-		putpixel(xk,yk,WHITE);
+		x = x+1;
 	}
+}
+
+int main(){
+	int gdriver = DETECT, gmode, errorcode;
+	initgraph(&gdriver, &gmode, "C:\\turboc3\\bgi");
+
+	errorcode = graphresult();
+	if (errorcode != grOk){
+	  printf("Graphics error: %s\n", grapherrormsg(errorcode));
+	  printf("Press any key to halt:");
+	  getch();
+	  exit(1);
+	}
+	lineBre(0,0,100,100);
+	lineBre(100,100,300,200);
+	lineBre(200,0,400,200);
+
 	getch();
 	return 0;
 }

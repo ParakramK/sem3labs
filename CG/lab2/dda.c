@@ -27,9 +27,19 @@ void lineDDA(int x1, int y1,int x2, int y2){
 }
 
 void main( ){
-	int gd=DETECT,gm; 
-	initgraph(&gd,&gm,"c:\\turboc3\\bgi"); 
-	lineDDA(100,100,350,350);
+	int gdriver = DETECT, gmode, errorcode;
+	initgraph(&gdriver, &gmode, "C:\\turboc3\\bgi");
+
+	errorcode = graphresult();
+	if (errorcode != grOk){
+		printf("Graphics error: %s\n", grapherrormsg(errorcode));
+		printf("Press any key to halt:");
+		getch();
+		exit(1);
+	} 
+	lineDDA(100,100,300,300);
+	lineDDA(10,10,200,100);
+	lineDDA(10,10,100,200);
 	getch();	 
 	closegraph();
 }

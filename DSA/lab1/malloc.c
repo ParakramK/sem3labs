@@ -8,8 +8,7 @@ int main() {
     if (ptr == NULL) {
         printf("Memory can't be allocated");
         exit(0);
-    }
-    else {
+    } else {
         printf("Enter ELements: ");
         for (i = 0;i < n;i++) {
             scanf("%d", ptr + i);

@@ -1,14 +1,12 @@
 library ieee;
 use ieee.std_logic_1164.all;
-entity xorl is
+entity nandgate is
 	port (
-
 		a, b : in bit;
 		o : out bit
-
 	);
-end xorl;
-architecture behave of xorl is
+end nandagte;
+architecture behave of nandgate is
 begin
-	o <= a xor b;
+	o <= a nand b;
 end behave;

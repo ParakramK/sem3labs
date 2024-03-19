@@ -1,9 +1,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
 entity halfsubtractorl is
-	port(
-		a,b: in bit;
-		d,br: out bit
+	port (
+		a, b : in bit;
+		d, br : out bit
 	);
 end halfsubtractorl;
 

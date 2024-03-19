@@ -4,14 +4,14 @@ entity halfsubtractorl_tb is
 end halfsubtractorl_tb;
 architecture test of halfsubtractorl_tb is
 	component halfsubtractorl
-		port(
-			a,b: in bit;
-			d,br: out bit
+		port (
+			a, b : in bit;
+			d, br : out bit
 		);
 	end component;
-signal a,b,d,br: bit;
+	signal a, b, d, br : bit;
 begin
-	half_subtractor:halfsubtractorl port map(a=>a, b=>b, d=>d, br=>br);
+	half_subtractor : halfsubtractorl port map(a => a, b => b, d => d, br => br);
 	process begin
 		a <= '0';
 		b <= '0';

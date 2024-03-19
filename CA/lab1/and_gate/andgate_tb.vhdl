@@ -1,9 +1,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
-entity andl_tb is
-end andl_tb;
-architecture test of andl_tb is
-	component andl
+entity andgate_tb is
+end andgate_tb;
+architecture test of andgate_tb is
+	component andgate
 		port (
 			a : in bit;
 			b : in bit;
@@ -12,7 +12,7 @@ architecture test of andl_tb is
 	end component;
 	signal a, b, o : bit;
 begin
-	and_gate : andl
+	and_gate : andgate
 	port map(a => a, b => b, o => o);
 	process begin
 		a <= '0';

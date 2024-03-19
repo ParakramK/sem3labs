@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
-entity nandl is
+entity xnorgate is
 	port (
 
 		a, b : in bit;
 		o : out bit
 
 	);
-end nandl;
-architecture behave of nandl is
+end xnorgate;
+architecture behave of xnorgate is
 begin
-	o <= a nand b;
+	o <= a xnor b;
 end behave;

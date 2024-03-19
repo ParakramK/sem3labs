@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
-entity orl is
+entity orgate is
 	port (
 
 		a, b : in bit;
 		o : out bit
 
 	);
-end orl;
-architecture behave of orl is
+end orgate;
+architecture behave of orgate is
 begin
 	o <= a or b;
 end behave;

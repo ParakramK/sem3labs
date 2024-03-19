@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
-entity xnorl is
+entity xorgate is
 	port (
 
 		a, b : in bit;
 		o : out bit
 
 	);
-end xnorl;
-architecture behave of xnorl is
+end xorgate;
+architecture behave of xorgate is
 begin
-	o <= a xnor b;
+	o <= a xor b;
 end behave;

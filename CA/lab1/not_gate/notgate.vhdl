@@ -1,12 +1,12 @@
 library ieee;
 use ieee.std_logic_1164.all;
-entity notl is
+entity notgate is
 	port (
 		a : in bit;
 		o : out bit
 	);
-end notl;
-architecture behave of notl is
+end notgate;
+architecture behave of notgate is
 begin
 	o <= not a;
 end behave;

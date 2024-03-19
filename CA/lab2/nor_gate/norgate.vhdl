@@ -1,14 +1,12 @@
 library ieee;
 use ieee.std_logic_1164.all;
-entity norl is
+entity norgate is
 	port (
-
 		a, b : in bit;
 		o : out bit
-
 	);
-end norl;
-architecture behave of norl is
+end norgate;
+architecture behave of norgate is
 begin
 	o <= a nor b;
 end behave;

@@ -1,9 +1,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
-entity orgate_tb is
-end orgate_tb;
-architecture test of orgate_tb is
-	component orgate
+entity xnorgate_tb is
+end xnorgate_tb;
+architecture test of xnorgate_tb is
+	component xnorgate
 		port (
 			a : in bit;
 			b : in bit;
@@ -12,11 +12,11 @@ architecture test of orgate_tb is
 	end component;
 	signal a, b, o : bit;
 begin
-	or_gate : orgate
+	xnor_gate : xnorgate
 	port map(a => a, b => b, o => o);
 	process begin
-		a <= '0'gate
-			b <= '0';
+		a <= '0';
+		b <= '0';
 		wait for 1 ns;
 		a <= '0';
 		b <= '1';
